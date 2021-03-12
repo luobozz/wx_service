@@ -1,0 +1,14 @@
+{
+  "properties": [
+    {
+      "name": "httpurl.url",
+      "type": "java.util.Map<java.lang.String,java.lang.String>",
+      "description": "远程调用路径."
+    },
+    {
+      "name": "codemsg.codes",
+      "type": "java.util.Map<java.lang.Integer,java.lang.String>",
+      "description": "返回参数codeMsg."
+    }
+  ]
+}

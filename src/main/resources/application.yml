@@ -1,0 +1,49 @@
+server:
+  port: 1000
+spring:
+  profiles:
+    include: codemsg
+  datasource:
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:sqlserver://42.192.153.6;DatabaseName=wx
+    username: root
+    password: cl3226161
+    min-idle: 50
+    initial-size: 20
+    max-total: 50
+    max-wait-millis: 200
+  redis:
+    database: 0
+    host: 47.92.136.85
+    port: 6379
+    password: 123456
+    jedis:
+      pool:
+        max-active: 600
+        max-wait: 8000
+        max-idle: 300
+        min-idle: 50
+    timeout: 10000
+  async:
+    core-pool-size: 50
+    max-pool-size: 500
+    queue-capacity: 100
+    keep-alive-seconds: 20
+    thread-name-prefix: luobo-wx-async
+
+mybatis-plus:
+  mapper-locations:
+    - classpath:./mybatis/mapper/*.xml
+  config-location: classpath:mybatis/mybatis-config.xml
+
+wx:
+  mp:
+    redisConfig:
+      host: 47.92.136.85
+      port: 6379
+    configs:
+      - appId: wxc091c78d9d1edabb # 第一个公众号的appid
+        secret: 42b4f153cabb51cd485f344fd9da5bb6 # 公众号的appsecret
+        token: 111 # 接口配置里的Token值
+        aesKey: 111 # 接口配置里的EncodingAESKey值
