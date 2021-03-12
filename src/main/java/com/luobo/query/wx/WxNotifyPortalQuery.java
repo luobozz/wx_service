@@ -1,4 +1,4 @@
-package com.luobo.query.order;
+package com.luobo.query.wx;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -13,19 +13,15 @@ import javax.validation.constraints.NotEmpty;
  */
 @Data
 @AllArgsConstructor
-public class VerificationQuery {
-
-    @Min(1)
+public class WxNotifyPortalQuery {
     @NotEmpty
-    private Integer orderId;
-    @Min(1)
+    private String appId;
     @NotEmpty
-    private Integer accountId;
-
-    private Integer terminal;
-    @Min(1)
-    @Max(2)
+    private String signature;
     @NotEmpty
-    private Integer type;
-    private String verStr;
+    private String timestamp;
+    @NotEmpty
+    private String nonce;
+    @NotEmpty
+    private String echostr;
 }

@@ -1,6 +1,5 @@
 package com.luobo.controller;
 
-import com.luobo.log.Log;
 import org.springframework.web.bind.annotation.*;
 
 /**
@@ -9,16 +8,14 @@ import org.springframework.web.bind.annotation.*;
  * @author chenlingyu
  */
 @RestController
-@RequestMapping("api")
-public class WxController {
+@RequestMapping("/wx/api")
+public class WxApiController {
 
     /**
      * TODO test上线前检查一下消除
      */
     @GetMapping("test")
     public void test() {
-        Log.info("测试");
+
     }
-
-
 }

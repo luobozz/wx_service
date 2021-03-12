@@ -45,5 +45,5 @@ wx:
     configs:
       - appId: wxc091c78d9d1edabb # 第一个公众号的appid
         secret: 42b4f153cabb51cd485f344fd9da5bb6 # 公众号的appsecret
-        token: 111 # 接口配置里的Token值
-        aesKey: 111 # 接口配置里的EncodingAESKey值
+        token: LUOBOTK # 接口配置里的Token值
+        aesKey: 2BK1Ze5Lp8SqP0lysuec5AAgxbWdHunIqyUCadwtaZO # 接口配置里的EncodingAESKey值

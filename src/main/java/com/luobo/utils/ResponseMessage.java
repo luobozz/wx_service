@@ -23,7 +23,6 @@ public class ResponseMessage {
     private int code = 0;
     private long total = 0;
     private String message = "";
-    public int AllNum=0;
     public Timestamp timestamp=TimeStampHelper.getNow();
     private List<?> data = new ArrayList<>();
 

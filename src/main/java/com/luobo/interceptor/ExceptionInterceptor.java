@@ -3,8 +3,8 @@ package com.luobo.interceptor;
 
 import com.luobo.exception.CustomException;
 import com.luobo.exception.ErrorLogException;
-import com.luobo.log.Log;
 import com.luobo.utils.CodeMessageHandle;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.servlet.error.DefaultErrorAttributes;
 import org.springframework.validation.BindException;
@@ -24,6 +24,7 @@ import java.util.List;
  * @date 2020/5/2 15:16
  */
 
+@Slf4j
 @ControllerAdvice
 public class ExceptionInterceptor extends DefaultErrorAttributes {
 
@@ -56,6 +57,6 @@ public class ExceptionInterceptor extends DefaultErrorAttributes {
 
     @ExceptionHandler(ErrorLogException.class)
     public void errorLogExceptionHandler(ErrorLogException e, WebRequest request, HttpServletResponse response) {
-         Log.error(e.getLogMsg());
+         log.error(e.getLogMsg());
     }
 }
