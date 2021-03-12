@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration debug="false">
+    <!--elk网络地址-->
+<!--    <property name="ELK.ADDRESS" value="101.132.97.130:4560"/>-->
+    <!--elk当前项输出name-->
+    <property name="ELK.HOSTNAME" value="wx"/>
+    <!--devLog渲染配置-->
+    <property name="DEV_CONSOLE_PATTERN" value="%(%d{yyyy-MM-dd HH:mm:ss}) %yellow([%thread]) %highlight([%level]) %cyan(%-50logger{50}) : %(%msg) %n"/>
+
+    <!--elk-logStash输出-->
+<!--    <appender name="ELK_LOG" class="net.logstash.logback.appender.LogstashTcpSocketAppender">-->
+<!--        <destination>${ELK.ADDRESS}</destination>-->
+<!--        <encoder charset="UTF-8" class="net.logstash.logback.encoder.LogstashEncoder">-->
+<!--            <customFields>{"appname": "${ELK.HOSTNAME}"}</customFields>-->
+<!--        </encoder>-->
+<!--    </appender>-->
+    <!--dev-控制台输出 -->
+    <appender name="DEV_LOG" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <pattern>${DEV_CONSOLE_PATTERN}</pattern>
+        </encoder>
+    </appender>
+
+    <root level="INFO">
+        <!--上线再开-->
+<!--        <appender-ref ref="ELK_LOG"/>-->
+        <appender-ref ref="DEV_LOG"/>
+    </root>
+</configuration>
