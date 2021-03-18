@@ -38,7 +38,7 @@ public class CodeMessageHandle {
 
 	private void checkCodes(ResponseMessage responseMessage,int code) {
 		int successCode=200,noneCode=404,errorCode=500,noAuthCode=403;
-		if(code==noneCode||code==errorCode||code==noAuthCode){
+		if(code==successCode||code==noneCode||code==errorCode||code==noAuthCode){
 			responseMessage.setMessage(defaultMsg(code));
 			return;
 		}else if(codes.get(code)==null){
