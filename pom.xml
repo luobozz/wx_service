@@ -119,7 +119,7 @@
     </dependencies>
 
     <build>
-        <finalName>apiwx</finalName>
+        <finalName>s1</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
