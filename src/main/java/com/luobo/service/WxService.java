@@ -1,6 +1,10 @@
 package com.luobo.service;
 
 
+import com.luobo.entity.User;
+
+import java.util.List;
+
 /**
  * WholesaleOrderService
  *
@@ -8,5 +12,5 @@ package com.luobo.service;
  */
 public interface WxService {
 
-    void test();
+    List<User> users();
 }

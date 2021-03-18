@@ -65,8 +65,8 @@
             <version>3.17</version>
         </dependency>
         <dependency>
-            <groupId>com.microsoft.sqlserver</groupId>
-            <artifactId>mssql-jdbc</artifactId>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
             <scope>runtime</scope>
         </dependency>
         <dependency>
@@ -119,6 +119,7 @@
     </dependencies>
 
     <build>
+        <finalName>apiwx</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>

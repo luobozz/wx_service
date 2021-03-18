@@ -37,7 +37,7 @@ public class CodeMessageHandle {
 	}
 
 	private void checkCodes(ResponseMessage responseMessage,int code) {
-		int noneCode=404,errorCode=500,noAuthCode=403;
+		int successCode=200,noneCode=404,errorCode=500,noAuthCode=403;
 		if(code==noneCode||code==errorCode||code==noAuthCode){
 			responseMessage.setMessage(defaultMsg(code));
 			return;
@@ -50,6 +50,8 @@ public class CodeMessageHandle {
 
 	private String defaultMsg(int code){
 		switch (code){
+			case 200:
+				return "操作成功";
 			case 403:
 				return "无效访问";
 			case 404:

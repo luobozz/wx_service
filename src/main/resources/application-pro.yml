@@ -1,0 +1,34 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://mysql:3306/test?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC
+    username: luobo
+    password: luobo
+    min-idle: 50
+    initial-size: 20
+    max-total: 50
+    max-wait-millis: 200
+  redis:
+    database: 0
+    host: redis
+    port: 6379
+    password: 123456
+    jedis:
+      pool:
+        max-active: 600
+        max-wait: 8000
+        max-idle: 300
+        min-idle: 50
+    timeout: 10000
+
+wx:
+  mp:
+    redisConfig:
+      host: redis
+      port: 6379
+    configs:
+      - appId: wxc091c78d9d1edabb # 第一个公众号的appid
+        secret: 42b4f153cabb51cd485f344fd9da5bb6 # 公众号的appsecret
+        token: LUOBOTK # 接口配置里的Token值
+        aesKey: 2BK1Ze5Lp8SqP0lysuec5AAgxbWdHunIqyUCadwtaZO # 接口配置里的EncodingAESKey值

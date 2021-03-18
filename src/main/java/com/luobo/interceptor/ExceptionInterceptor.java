@@ -4,6 +4,7 @@ package com.luobo.interceptor;
 import com.luobo.exception.CustomException;
 import com.luobo.exception.ErrorLogException;
 import com.luobo.utils.CodeMessageHandle;
+import com.luobo.utils.ResponseMessage;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.servlet.error.DefaultErrorAttributes;
@@ -33,26 +34,26 @@ public class ExceptionInterceptor extends DefaultErrorAttributes {
 
      @ExceptionHandler(Exception.class)
      @ResponseBody
-     public String handleException(Exception e) {
+     public ResponseMessage handleException(Exception e) {
          e.printStackTrace();
-         return codeMessageHandle.code(500).toString();
+         return codeMessageHandle.code(500);
      }
 
     @ExceptionHandler(BindException.class)
     @ResponseBody
-    public String validExceptionHandler(BindException e, WebRequest request, HttpServletResponse response) {
+    public ResponseMessage validExceptionHandler(BindException e, WebRequest request, HttpServletResponse response) {
         String errorMsg="参数验证失败:";
         List<FieldError> fieldErrors=e.getBindingResult().getFieldErrors();
         for (FieldError error:fieldErrors){
             errorMsg+=" "+error.getField()+":"+error.getDefaultMessage();
         }
-        return codeMessageHandle.code(500).customMsg(errorMsg).toString();
+        return codeMessageHandle.code(500).customMsg(errorMsg);
     }
 
     @ExceptionHandler(CustomException.class)
     @ResponseBody
-    public String customExceptionHandler(CustomException e, WebRequest request, HttpServletResponse response) {
-        return codeMessageHandle.code(500).customMsg(e.getCustomMsg()).toString();
+    public ResponseMessage customExceptionHandler(CustomException e, WebRequest request, HttpServletResponse response) {
+        return codeMessageHandle.code(500).customMsg(e.getCustomMsg());
     }
 
     @ExceptionHandler(ErrorLogException.class)
