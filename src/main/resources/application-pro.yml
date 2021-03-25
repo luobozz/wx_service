@@ -13,20 +13,19 @@ spring:
     database: 0
     host: redis
     port: 6379
-    password: 123456
+    password: 111111
     jedis:
       pool:
         max-active: 600
         max-wait: 8000
         max-idle: 300
         min-idle: 50
+        max-wait-millis: 10000
     timeout: 10000
 
 wx:
   mp:
-    redisConfig:
-      host: redis
-      port: 6379
+    useRedis: true
     configs:
       - appId: wxc091c78d9d1edabb # 第一个公众号的appid
         secret: 42b4f153cabb51cd485f344fd9da5bb6 # 公众号的appsecret

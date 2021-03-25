@@ -9,7 +9,7 @@ import lombok.Data;
  * @date 2020/6/10 11:19
  */
 @Data
-public class ErrorLogException extends Exception {
+public class ErrorLogException extends RuntimeException {
     private String logMsg;
     public ErrorLogException(String customMsg){
         this.logMsg=customMsg;

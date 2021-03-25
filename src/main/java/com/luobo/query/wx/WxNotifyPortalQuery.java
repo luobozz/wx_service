@@ -14,14 +14,14 @@ import javax.validation.constraints.NotEmpty;
 @Data
 @AllArgsConstructor
 public class WxNotifyPortalQuery {
-    @NotEmpty
+//    @NotEmpty
     private String appId;
-    @NotEmpty
+//    @NotEmpty
     private String signature;
-    @NotEmpty
+//    @NotEmpty
     private String timestamp;
-    @NotEmpty
+//    @NotEmpty
     private String nonce;
-    @NotEmpty
+//    @NotEmpty
     private String echostr;
 }

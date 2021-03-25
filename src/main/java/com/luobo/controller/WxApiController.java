@@ -19,6 +19,7 @@ public class WxApiController {
     private CodeMessageHandle codeMessageHandle;
     @Autowired
     private WxService wxService;
+
     /**
      * TODO test上线前检查一下消除
      */
