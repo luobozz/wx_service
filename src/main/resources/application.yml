@@ -1,17 +1,8 @@
 server:
   port: 1000
 spring:
-  profiles:
-    active: pro
-    include: codemsg
-  async:
-    core-pool-size: 50
-    max-pool-size: 500
-    queue-capacity: 100
-    keep-alive-seconds: 20
-    thread-name-prefix: luobo-wx-async
-
-mybatis-plus:
-  mapper-locations:
-    - classpath:./mybatis/mapper/*.xml
-  config-location: classpath:mybatis/mybatis-config.xml
+  http:
+    encoding:
+      force: true
+      charset: utf-8
+      enabled: true

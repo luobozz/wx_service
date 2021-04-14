@@ -13,15 +13,17 @@ import javax.validation.constraints.NotEmpty;
  */
 @Data
 @AllArgsConstructor
-public class WxNotifyPortalQuery {
+public class TestQuery {
     @NotEmpty
-    private String appId;
+    private String atchInstNo;
     @NotEmpty
-    private String signature;
+    private String bsnNo;
     @NotEmpty
-    private String timestamp;
+    private String empeNo;
     @NotEmpty
-    private String nonce;
+    private String srvIP;
     @NotEmpty
-    private String echostr;
+    private String wndwNo;
+    @NotEmpty
+    private String url;
 }
