@@ -1,8 +1,2 @@
 server:
-  port: 1000
-spring:
-  http:
-    encoding:
-      force: true
-      charset: utf-8
-      enabled: true
+  port: 8899

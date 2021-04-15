@@ -35,7 +35,7 @@ public class ExceptionInterceptor extends DefaultErrorAttributes {
     @ExceptionHandler(BindException.class)
     @ResponseBody
     public String validExceptionHandler(BindException e, WebRequest request, HttpServletResponse response) {
-        String errorMsg="参数验证失败:";
+        String errorMsg="Valid:";
         List<FieldError> fieldErrors=e.getBindingResult().getFieldErrors();
         for (FieldError error:fieldErrors){
             errorMsg+=" "+error.getField()+":"+error.getDefaultMessage();
